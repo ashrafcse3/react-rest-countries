@@ -23,7 +23,24 @@ function LoadCountries() {
     <div>
       <h1>Welcome to the world countries!</h1>
       <h3>Total countries: {countries.length}</h3>
+      {
+        countries.map(country => <Country country={country}></Country>)
+      }
     </div>
+  );
+}
+
+function Country(props) {
+  const { name, area, region } = props.country;
+  console.log(name);
+  return (
+    <div style={{
+      border: 'solid 3px', margin: '20px', padding: '20px', borderRadius: '20px'
+    }}>
+      <h2>Name: {name.common}</h2>
+      <p>Area: {area}</p>
+      <p>Region: {region}</p>
+    </div >
   );
 }
 
